@@ -1,0 +1,93 @@
+body{
+  margin:0;
+  background-image: url(https://marketplace.canva.com/EAD2962NKnQ/2/0/1600w/canva-rainbow-gradient-pink-and-purple-virtual-background-_Tcjok-d9b4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Diphylleia', serif;
+}
+
+.container{
+  background-color: white;
+  min-height: 100vh;
+  /* vh란 현재 보고있는 화면의 100%를 사용하겠다는 의미 */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.task-tabs{
+  display: flex;
+  position: relative;
+}
+
+.task-tabs div{
+  padding:1em;
+}
+
+#under-line{
+  height: 4px;
+  background-color: skyblue;
+  position: absolute;
+  width: 70px;
+  left: 0px;
+  top: 53px;
+  padding: 0px;
+  transition: .5s;
+}
+
+.task{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  border-bottom: 2px solid pink;
+}
+
+.text-input{
+  border:0;
+  padding: 5px 10px;
+  outline: none;
+  border-bottom: 1px solid gray;
+  width:80%;
+}
+
+.plus-btn{
+  background-color: transparent;
+  border: 0 solid transparent;
+  font-size: 13px;
+  color:skyblue;
+  font-weight: 600;
+}
+
+.plus-btn:hover{
+  transform: scale(1.1,1.1);
+  transition: .5s;
+  color: gray;
+}
+
+.btn{
+  background-color: transparent;
+  border: 0 solid transparent;
+  color: skyblue;
+  font-weight: 550;
+}
+
+.btn:hover{
+  color:gray;
+  transform: scale(1.1,1.1);
+  transition: .5s;
+}
+
+.task-done{
+  text-decoration: line-through;
+  color: gray;
+  transition: .5s;
+}
+
+.task-tabs div{
+  cursor: pointer;
+}
+
+@media(max-width:576px){
+  .container{
+    border-top: 10px solid pink;
+    border-bottom: 10px solid pink;
+  }
+}
