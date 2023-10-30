@@ -15,23 +15,25 @@ let taskList = [];
 let filterList = [];
 let mode = "all";
 
+//버튼 클릭시 addTask함수실행
 addButton.addEventListener("click", addTask);
 
 //엔터입력시 버튼 누르는 것과 동일하게 적용하는법
 taskInput.addEventListener("keydown", function (event) {
-  if (event.keyCode === 13) {
+  if (event.key === 'Enter') {
     addTask(event);
   }
 });
 
-//메뉴바 지정하기
+//메뉴바 지정하기(클릭이벤트)
 for (let i = 1; i < tabs.length; i++) {
-  tabs[i].addEventListener("click", filter);
+  tabs[i].addEventListener("click", function(event){filter(event)});
 }
 
 function addTask() {
   // 버튼의 활성화를 위해 객체를 활용해준다
   let task = {
+    //컴퓨터가 항목을 구분할 수 있도록 각각의 리스트마다 id를 지정해준다
     id: randomIDGenerator(),
     taskContent: taskInput.value,
     isComplete: false,
@@ -122,6 +124,7 @@ function filter(event) {
   render();
 }
 
+//랜덤 id 만들기
 function randomIDGenerator() {
   return "_" + Math.random().toString(36).substring(2, 9);
 }
